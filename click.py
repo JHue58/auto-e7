@@ -80,6 +80,32 @@ def click_ttk():
 def click_maoxian():
     maoxian = get_pin('maoxian')
     click(maoxian)
+    seven = get_pin('7')
+    click(seven)
+    e1 = get_pin('e1')
+    click(e1)
+    success_flag = False
+    while True:
+        for i in range(10):
+            epic = pg.locateCenterOnScreen(path(conf['main_epic']),confidence=0.7)
+            if epic is not None:
+                pg.moveTo(epic.x,epic.y+200, 1)
+                while True:
+                    if success_flag:
+                        break
+                    pg.scroll(-200)
+                    for i in range(3):
+                        epic_sm = pg.locateCenterOnScreen(path(conf['main_sm_epic']),confidence=0.9)
+                        if epic_sm is not None:
+                            click(epic_sm.x+275,epic_sm.y)
+                            success_flag = True
+                            break
+            break
+        if success_flag:
+            break
+        next = get_pin('next')
+        click(next)
+    time.sleep(3)
     click_ttk()
 
 

@@ -10,6 +10,12 @@ ap_count: -1
 # 主线or活动
 mode: 主线
 
+# 主线大章节截图名称
+main_epic: e1h
+
+# 主线小章节截图名称
+main_sm_epic: shua
+
 # 是否执行挂机任务
 guaji: true
 
