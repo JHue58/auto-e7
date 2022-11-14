@@ -1,0 +1,23 @@
+# 点击等待时间
+click_time: 3
+
+# 体力不足时是否自动购买体力
+ap_buy: true
+
+# 自动购买体力的次数 -1为无限
+ap_count: -1
+
+# 主线or活动
+mode: 主线
+
+# 是否执行挂机任务
+guaji: true
+
+# 挂机任务重复次数 -1为无限
+guaji_count: -1
+
+# 重复次数 -1为无限
+count: -1
+
+# 是否自动执行紧急任务
+urgent: true
