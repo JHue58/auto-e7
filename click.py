@@ -95,9 +95,9 @@ def click_maoxian():
                         break
                     pg.scroll(-200)
                     for i in range(3):
-                        epic_sm = pg.locateCenterOnScreen(path(conf['main_sm_epic']),confidence=0.9)
+                        epic_sm = pg.locateCenterOnScreen(path(conf['main_sm_epic']))
                         if epic_sm is not None:
-                            click(epic_sm.x+275,epic_sm.y)
+                            click(epic_sm.x+183,epic_sm.y)
                             success_flag = True
                             break
             break
