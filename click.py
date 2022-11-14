@@ -33,6 +33,7 @@ def get_pin(img, count=0):
                 last_op = None
                 op = get_pin(last)
                 click(op)
+                count = 0
         if not (img in not_print_img):
             print(f"正在定位{img}")
         res = pg.locateCenterOnScreen(path(img), confidence=0.7)
@@ -82,29 +83,12 @@ def click_maoxian():
     click(maoxian)
     seven = get_pin('7')
     click(seven)
-    e1 = get_pin('e1')
-    click(e1)
-    success_flag = False
-    while True:
-        for i in range(10):
-            epic = pg.locateCenterOnScreen(path(conf['main_epic']),confidence=0.7)
-            if epic is not None:
-                pg.moveTo(epic.x,epic.y+200, 1)
-                while True:
-                    if success_flag:
-                        break
-                    pg.scroll(-200)
-                    for i in range(3):
-                        epic_sm = pg.locateCenterOnScreen(path(conf['main_sm_epic']))
-                        if epic_sm is not None:
-                            click(epic_sm.x+183,epic_sm.y)
-                            success_flag = True
-                            break
-            break
-        if success_flag:
-            break
-        next = get_pin('next')
-        click(next)
+    if conf['epic_hou']:
+        epic = get_pin('epich')
+    else:
+        epic = get_pin('epic')
+    click(epic)
+
     time.sleep(3)
     click_ttk()
 
@@ -207,7 +191,7 @@ def check_auto_mission():
             click_zuixiaohua()
             guaji_count += 1
         else:
-            print('挂机任务已退出执行')
+            print('挂机任务已退出执行(异常退出)')
             guaji_count = float('inf')
             click(click_menu_dating())
 
