@@ -70,9 +70,12 @@ def click_re():
     click(re)
 
 
-def click_ttk():
+def click_ttk(zhixian=False):
     ttk = get_pin('ttk')
     click(ttk)
+    if zhixian:
+        sup = get_pin('sup')
+        click(sup)
     team = get_pin('team')
     click(team)
     click_kaishi()
@@ -102,7 +105,7 @@ def click_zhixian():
     click(in_zhixian.x, in_zhixian.y + 100)
     mx = get_pin('mx')
     click(mx)
-    click_ttk()
+    click_ttk(True)
 
 
 def click_menu_dating():
